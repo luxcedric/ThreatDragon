@@ -189,7 +189,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Der Benutzer versucht sich auf einer Visuell ähnlich/gleichen Plattform anzumelden, ohne zu merken dass im Hintergrund seine Login-Credentials mitgeschnitten werden",
+                  "description": "Der Benutzer versucht sich auf einer Visuell ähnlich/gleichen Plattform anzumelden, ohne zu merken dass im Hintergrund seine Login-Credentials mitgeschnitten werden\n\nCAPEC: Fake source of Data: ID194 \nMIRTE: T1567 -> Restrict Web Based Content ",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -213,8 +213,8 @@
                 "text": "2-Faktor-Authen\ntifizierungs\ndienst"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -229,8 +229,22 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "ef509cd0-bd67-4baa-ae2d-570ee91104cd",
+                  "title": "Bearbeitung der Benutzerdaten",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Der Angreifer könnte Daten wie die Telefonnummer bearbeiten, wodurch der Angreifer den Token erhalten würde, statt der Zielperson\n\nCAPEC: ID 165\nMITRE: Encrypt Sensitive Data  -> ID T1565",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 17,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -279,7 +293,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Falls ein Angreifer im System ist, kann er die Daten der Datenbank offenlegen, da diese nicht verschlüsselt ist",
+                  "description": "Falls ein Angreifer im System ist, kann er die Daten der Datenbank offenlegen, da diese nicht verschlüsselt ist\n\nCAPAC ID37\nMITRE: ID: M1041 Encrypt Sensitive Data",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1376,54 +1390,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "OTT-Anfrage",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "c73c41de-93b0-4efc-87e5-b44227b1571a",
-            "labels": [
-              "OTT-Anfrage"
-            ],
-            "source": {
-              "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "target": {
-              "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
-            },
-            "vertices": [
-              {
-                "x": 800,
-                "y": 30
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Wochenreport",
               "description": "Wöchentlicher Report ans Management, \nsigniert und verschlüsselt",
               "outOfScope": false,
@@ -1460,7 +1426,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1484,8 +1451,22 @@
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a3f8a0b1-d62c-4d91-a5f8-e638504ce08e",
+                  "title": "Manipulation der Berichte",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Durch die Manipulation der Berichte könnte man den Managern vorgaukelt, dass das System einwandfrei funktioniert, auch wenn das System eigentlich andere Meldungen in den Bericht schreiben wollte.\n\nCAPEC: ID: 165\nMITRE: Encrypt Sensitive Data -> ID T1565",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ]
             },
             "id": "e023159d-21c1-4dd4-a1e0-cc1b32497fe8",
             "labels": [
@@ -1499,10 +1480,134 @@
             },
             "vertices": [
               {
+                "x": 680,
+                "y": 100
+              },
+              {
                 "x": 530,
                 "y": 10
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "OTT-Anfrage",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "d726f52b-d77f-4849-90bb-a15b33726d52",
+                  "title": "Vortäuschung einer Anfrage",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Der Angreifer könnte sich als ein Benutzer ausgeben der einen Token braucht. Dieser wird dann für ihn erstellt.\n\nCAPEC: ID 194: Fake the source of Data\nMITRE: Application Developer Guidance: T1212",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "c73c41de-93b0-4efc-87e5-b44227b1571a",
+            "labels": [
+              "OTT-Anfrage"
+            ],
+            "source": {
+              "cell": "58d69334-736f-4331-822b-553769b8fedc"
+            },
+            "target": {
+              "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
+            },
+            "vertices": [
+              {
+                "x": 800,
+                "y": 30
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log(Login, Phone Number)",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "8b258f90-f7a2-437c-bfde-e3d8fd9f94f4",
+                  "title": "Löschen der Logeinträge",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Wenn der Angreifer die Logeinträge vor der DB abfangen kann und diese löschen kann, so kann er seine Aktivität leugnen, da es keinen Beweis gegen ihn gibt.\n\nCAPEC: ID: 81\nMITRE: \nEncrypt Sensitive Data: ID1070",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "0a33524d-0fd7-4ec1-ad3e-089985ca5c5b",
+            "labels": [
+              "Log(Login, Phone Number)"
+            ],
+            "source": {
+              "cell": "58d69334-736f-4331-822b-553769b8fedc"
+            },
+            "target": {
+              "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
+            }
           },
           {
             "shape": "flow",
@@ -1541,7 +1646,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Der Angreifer erstellt eine hohe Last an Anfragen für die Login-Seite. Diese ist der Last nicht gewachsen und das System bricht zusammen. Hierbei kann der Angreifer ein Botnetz verwenden um die Anfragen auf den Server verteilt zu erstellen",
+                  "description": "Der Angreifer erstellt eine hohe Last an Anfragen für die Login-Seite. Diese ist der Last nicht gewachsen und das System bricht zusammen. Hierbei kann der Angreifer ein Botnetz verwenden um die Anfragen auf den Server verteilt zu erstellen\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1568,6 +1673,10 @@
               },
               {
                 "x": 190,
+                "y": 260
+              },
+              {
+                "x": 230,
                 "y": 260
               }
             ]
@@ -1609,7 +1718,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden",
+                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden\n\nCAPEC ID: 94\nMITRE: Encrypt Sensitive Information -> ID T1557\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1634,63 +1743,6 @@
                 "y": 196.5
               }
             ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Log(Login, Phone Number)",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "8b258f90-f7a2-437c-bfde-e3d8fd9f94f4",
-                  "title": "Löschen der Logeinträge",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Repudiation",
-                  "description": "Wenn der Angreifer die Logeinträge vor der DB abfangen kann und diese löschen kann, so kann er seine Aktivität leugnen, da es keinen Beweis gegen ihn gibt.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "Generic",
-                  "new": false,
-                  "number": 12,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "0a33524d-0fd7-4ec1-ad3e-089985ca5c5b",
-            "labels": [
-              "Log(Login, Phone Number)"
-            ],
-            "source": {
-              "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "target": {
-              "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
-            }
           },
           {
             "position": {
@@ -1798,7 +1850,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Wenn die Daten im Siem nicht verschlüsselt sind, und ein Angreifer auf dieses Zugriff erhalten könnte, so könnten die Daten offengelegt werde. Hier könnten Sicherheitsrelevante Informationen oder Protokolldaten betroffen sein",
+                  "description": "Wenn die Daten im Siem nicht verschlüsselt sind, und ein Angreifer auf dieses Zugriff erhalten könnte, so könnten die Daten offengelegt werde. Hier könnten Sicherheitsrelevante Informationen oder Protokolldaten betroffen sein\n\n\nCAPEC ID: 165\nMITRE: Encrypt Sensitive Information -> ID T1557\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1880,7 +1932,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Wenn das System vllt auch durch handeln eines Angreifers zu viele Anfragen an den OTT-Service schickt kann dieser Überlasten und der Kunde könnte sein OTT nicht mehr erhalten",
+                  "description": "Wenn das System vllt auch durch handeln eines Angreifers zu viele Anfragen an den OTT-Service schickt kann dieser Überlasten und der Kunde könnte sein OTT nicht mehr erhalten\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1943,6 +1995,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 14
+    "threatTop": 18
   }
 }
