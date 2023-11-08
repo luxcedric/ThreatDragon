@@ -495,59 +495,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Login",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "75df1a91-2d79-480a-ae52-b56775f5de02",
-            "labels": [
-              "Login"
-            ],
-            "source": {
-              "x": 44,
-              "y": 160
-            },
-            "target": {
-              "cell": "516403bb-35a1-4173-8492-18fa95610750"
-            },
-            "vertices": [
-              {
-                "x": 90,
-                "y": 220
-              },
-              {
-                "x": 190,
-                "y": 260
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Log(Login, Phone Number)",
               "description": "",
               "outOfScope": false,
@@ -1612,6 +1559,59 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "75df1a91-2d79-480a-ae52-b56775f5de02",
+            "labels": [
+              "Login"
+            ],
+            "source": {
+              "x": 44,
+              "y": 160
+            },
+            "target": {
+              "cell": "516403bb-35a1-4173-8492-18fa95610750"
+            },
+            "vertices": [
+              {
+                "x": 90,
+                "y": 220
+              },
+              {
+                "x": 190,
+                "y": 260
+              }
+            ]
+          },
+          {
             "position": {
               "x": 893,
               "y": 560.000000000001
@@ -1820,6 +1820,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 1
   }
 }
