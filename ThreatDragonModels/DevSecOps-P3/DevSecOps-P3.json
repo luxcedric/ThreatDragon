@@ -32,8 +32,8 @@
                 "text": "External Service für den Versand des OTT"
               }
             },
-            "id": "2884533b-cdad-4e33-9554-5c580b028d55",
             "zIndex": -1,
+            "id": "2884533b-cdad-4e33-9554-5c580b028d55",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "External Service für den Versand des OTT",
@@ -57,8 +57,8 @@
                 "text": "Externer Service für Telefonnummernauflösung (Telco)"
               }
             },
-            "id": "2609d7b2-d094-4448-8960-67e09a5e24a4",
             "zIndex": -1,
+            "id": "2609d7b2-d094-4448-8960-67e09a5e24a4",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Externer Service für Telefonnummernauflösung (Telco)",
@@ -138,8 +138,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "eee1b19e-8477-4633-8ee7-79792299e217",
             "zIndex": 1,
+            "id": "eee1b19e-8477-4633-8ee7-79792299e217",
             "data": {
               "type": "tm.Actor",
               "name": "User",
@@ -172,8 +172,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "516403bb-35a1-4173-8492-18fa95610750",
             "zIndex": 2,
+            "id": "516403bb-35a1-4173-8492-18fa95610750",
             "data": {
               "type": "tm.Process",
               "name": "Login System - \nWebapp + \nMobile App",
@@ -206,6 +206,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 3,
             "id": "58d69334-736f-4331-822b-553769b8fedc",
             "data": {
               "type": "tm.Process",
@@ -216,8 +217,7 @@
               "privilegeLevel": "",
               "hasOpenThreats": false,
               "threats": []
-            },
-            "zIndex": 3
+            }
           },
           {
             "position": {
@@ -243,8 +243,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "eee6efac-868f-409f-afeb-a2619dbe1d12",
             "zIndex": 4,
+            "id": "eee6efac-868f-409f-afeb-a2619dbe1d12",
             "data": {
               "type": "tm.Store",
               "name": "Log-DB",
@@ -283,8 +283,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "4f0cdb7e-833f-4c56-b309-59c7ad1db9b1",
             "zIndex": 5,
+            "id": "4f0cdb7e-833f-4c56-b309-59c7ad1db9b1",
             "data": {
               "type": "tm.Store",
               "name": "Telefonnummern-DB",
@@ -320,8 +320,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "614042dc-95c2-4e7d-a3ec-8148bffab15e",
             "zIndex": 6,
+            "id": "614042dc-95c2-4e7d-a3ec-8148bffab15e",
             "data": {
               "type": "tm.Process",
               "name": "Kundentelefon\nanbieter",
@@ -354,8 +354,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "5d90a596-df47-4ba6-a30d-222c67ab2eb6",
             "zIndex": 7,
+            "id": "5d90a596-df47-4ba6-a30d-222c67ab2eb6",
             "data": {
               "type": "tm.Process",
               "name": "Telefonnummer-\nAPI-Gateway",
@@ -388,6 +388,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 8,
             "id": "320f2232-56ac-4f94-87df-118288de5e26",
             "data": {
               "type": "tm.Process",
@@ -398,8 +399,7 @@
               "privilegeLevel": "",
               "hasOpenThreats": false,
               "threats": []
-            },
-            "zIndex": 8
+            }
           },
           {
             "position": {
@@ -425,8 +425,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "495d4dd1-321c-4f93-999b-cc4734e1cab2",
             "zIndex": 9,
+            "id": "495d4dd1-321c-4f93-999b-cc4734e1cab2",
             "data": {
               "type": "tm.Store",
               "name": "Routing-\nInformation-DB",
@@ -462,8 +462,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "bda44d5d-1228-4c65-8eb8-bc20e1d72213",
             "zIndex": 10,
+            "id": "bda44d5d-1228-4c65-8eb8-bc20e1d72213",
             "data": {
               "type": "tm.Process",
               "name": "Google Voice",
@@ -507,6 +507,9 @@
               "threats": []
             },
             "id": "75df1a91-2d79-480a-ae52-b56775f5de02",
+            "labels": [
+              "Login"
+            ],
             "source": {
               "x": 44,
               "y": 160
@@ -523,9 +526,6 @@
                 "x": 190,
                 "y": 260
               }
-            ],
-            "labels": [
-              "Login"
             ]
           },
           {
@@ -560,15 +560,15 @@
               "threats": []
             },
             "id": "0a33524d-0fd7-4ec1-ad3e-089985ca5c5b",
+            "labels": [
+              "Log(Login, Phone Number)"
+            ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
               "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
-            },
-            "labels": [
-              "Log(Login, Phone Number)"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -602,15 +602,15 @@
               "threats": []
             },
             "id": "55edbc01-78fd-4b53-a21a-e9d4b4bf8180",
+            "labels": [
+              "Telefonnummer"
+            ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
               "cell": "614042dc-95c2-4e7d-a3ec-8148bffab15e"
-            },
-            "labels": [
-              "Telefonnummer"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -644,15 +644,15 @@
               "threats": []
             },
             "id": "271f967b-25e2-4e41-9e9b-21b5a30b80dd",
+            "labels": [
+              "Nummer auslesen"
+            ],
             "source": {
               "cell": "614042dc-95c2-4e7d-a3ec-8148bffab15e"
             },
             "target": {
               "cell": "4f0cdb7e-833f-4c56-b309-59c7ad1db9b1"
             },
-            "labels": [
-              "Nummer auslesen"
-            ],
             "vertices": [
               {
                 "x": 510,
@@ -692,16 +692,16 @@
               "threats": []
             },
             "id": "ad59ea3c-06f6-4b86-9cc5-6cb37ac87cb7",
+            "labels": [
+              "Alternative A"
+            ],
             "source": {
               "x": 655,
               "y": 475
             },
             "target": {
               "cell": "bda44d5d-1228-4c65-8eb8-bc20e1d72213"
-            },
-            "labels": [
-              "Alternative A"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -735,16 +735,16 @@
               "threats": []
             },
             "id": "ceb6860c-3e01-458d-a29f-0167d327a899",
+            "labels": [
+              "Alternative B"
+            ],
             "source": {
               "x": 646,
               "y": 500
             },
             "target": {
               "cell": "83e39c42-15b8-4fda-aa37-71e5f148d1b6"
-            },
-            "labels": [
-              "Alternative B"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -778,6 +778,9 @@
               "threats": []
             },
             "id": "b929ee47-ab3b-4074-b324-4eec6acfd3a5",
+            "labels": [
+              "Alternative C"
+            ],
             "source": {
               "x": 610,
               "y": 525
@@ -794,9 +797,6 @@
                 "x": 870,
                 "y": 720
               }
-            ],
-            "labels": [
-              "Alternative C"
             ]
           },
           {
@@ -831,6 +831,9 @@
               "threats": []
             },
             "id": "3eaccbb3-ad8d-448d-b455-cc5e59c4a600",
+            "labels": [
+              "Antwort"
+            ],
             "source": {
               "cell": "5d90a596-df47-4ba6-a30d-222c67ab2eb6"
             },
@@ -842,9 +845,6 @@
                 "x": 1130,
                 "y": 270
               }
-            ],
-            "labels": [
-              "Antwort"
             ]
           },
           {
@@ -879,6 +879,9 @@
               "threats": []
             },
             "id": "5aea9fd3-7643-4203-b755-2b5a4ae8517c",
+            "labels": [
+              "2a. Telefonnummer"
+            ],
             "source": {
               "x": 1468,
               "y": 204.9999999999993
@@ -886,9 +889,6 @@
             "target": {
               "cell": "320f2232-56ac-4f94-87df-118288de5e26"
             },
-            "labels": [
-              "2a. Telefonnummer"
-            ],
             "vertices": [
               {
                 "x": 1520,
@@ -928,6 +928,9 @@
               "threats": []
             },
             "id": "1504d882-dd72-4d60-b91f-50de429063ff",
+            "labels": [
+              "2b. Telefonanbieter"
+            ],
             "source": {
               "cell": "320f2232-56ac-4f94-87df-118288de5e26"
             },
@@ -939,9 +942,6 @@
                 "x": 1530,
                 "y": 157.4999999999993
               }
-            ],
-            "labels": [
-              "2b. Telefonanbieter"
             ]
           },
           {
@@ -976,15 +976,15 @@
               "threats": []
             },
             "id": "5fcd059e-0720-43f0-abdc-c1e44dacc1b5",
+            "labels": [
+              "Auslesen von Informationen"
+            ],
             "source": {
               "cell": "320f2232-56ac-4f94-87df-118288de5e26"
             },
             "target": {
               "cell": "495d4dd1-321c-4f93-999b-cc4734e1cab2"
             },
-            "labels": [
-              "Auslesen von Informationen"
-            ],
             "vertices": [
               {
                 "x": 1710,
@@ -1024,6 +1024,9 @@
               "threats": []
             },
             "id": "baa3cacd-9134-48de-91c9-a93d126c48fe",
+            "labels": [
+              "S. OTT\n"
+            ],
             "source": {
               "x": 1014,
               "y": 770
@@ -1040,9 +1043,6 @@
                 "x": 380,
                 "y": 860
               }
-            ],
-            "labels": [
-              "S. OTT\n"
             ]
           },
           {
@@ -1077,6 +1077,9 @@
               "threats": []
             },
             "id": "d61c7dc6-6ada-45c3-97a8-c5d9dd28c49a",
+            "labels": [
+              "S. OTT"
+            ],
             "source": {
               "x": 1017,
               "y": 610
@@ -1093,9 +1096,6 @@
                 "x": 349,
                 "y": 880
               }
-            ],
-            "labels": [
-              "S. OTT"
             ]
           },
           {
@@ -1130,6 +1130,9 @@
               "threats": []
             },
             "id": "f233e8fb-a27e-4c37-b655-e7ae4e4df830",
+            "labels": [
+              "S. OTT\n"
+            ],
             "source": {
               "cell": "bda44d5d-1228-4c65-8eb8-bc20e1d72213"
             },
@@ -1149,9 +1152,6 @@
                 "x": 300,
                 "y": 890
               }
-            ],
-            "labels": [
-              "S. OTT\n"
             ]
           },
           {
@@ -1186,15 +1186,15 @@
               "threats": []
             },
             "id": "06995e0b-d819-457e-9786-6a95fd65c928",
+            "labels": [
+              "Überwacht"
+            ],
             "source": {
               "cell": "8efa1d3c-9066-4fac-9fd2-b33589c4e2e3"
             },
             "target": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "labels": [
-              "Überwacht"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1228,15 +1228,15 @@
               "threats": []
             },
             "id": "ca056cab-e9ba-4c51-9f61-6f739ba3d3d7",
+            "labels": [
+              "2.Weiterleitung Telefonnummer"
+            ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
               "cell": "5d90a596-df47-4ba6-a30d-222c67ab2eb6"
             },
-            "labels": [
-              "2.Weiterleitung Telefonnummer"
-            ],
             "vertices": [
               {
                 "x": 1110,
@@ -1276,15 +1276,15 @@
               "threats": []
             },
             "id": "97750274-66e2-49d0-865c-886e8dc1a431",
+            "labels": [
+              "1. Auth Challenge"
+            ],
             "source": {
               "cell": "516403bb-35a1-4173-8492-18fa95610750"
             },
             "target": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "labels": [
-              "1. Auth Challenge"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1318,15 +1318,15 @@
               "threats": []
             },
             "id": "196de321-2386-4feb-b507-68fa2176eb11",
+            "labels": [
+              "Überwachen"
+            ],
             "source": {
               "cell": "8efa1d3c-9066-4fac-9fd2-b33589c4e2e3"
             },
             "target": {
               "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
-            },
-            "labels": [
-              "Überwachen"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1360,15 +1360,15 @@
               "threats": []
             },
             "id": "2711a8c0-837d-426f-9816-107d0886210a",
+            "labels": [
+              "OTT"
+            ],
             "source": {
               "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
             },
             "target": {
               "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
-            },
-            "labels": [
-              "OTT"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1402,15 +1402,15 @@
               "threats": []
             },
             "id": "28bce0d6-3d91-4a06-9f67-6ad77192f527",
+            "labels": [
+              "OTT"
+            ],
             "source": {
               "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
             },
             "target": {
               "cell": "614042dc-95c2-4e7d-a3ec-8148bffab15e"
             },
-            "labels": [
-              "OTT"
-            ],
             "vertices": [
               {
                 "x": 690,
@@ -1495,15 +1495,15 @@
               "threats": []
             },
             "id": "c73c41de-93b0-4efc-87e5-b44227b1571a",
+            "labels": [
+              "OTT-Anfrage"
+            ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
               "cell": "3cd5aecc-0603-470a-9e7d-e02775f1e53d"
             },
-            "labels": [
-              "OTT-Anfrage"
-            ],
             "vertices": [
               {
                 "x": 800,
@@ -1543,15 +1543,15 @@
               "threats": []
             },
             "id": "ea0b61cb-d6ff-4225-91a2-cfac372682a0",
+            "labels": [
+              "Wochenreport"
+            ],
             "source": {
               "cell": "8efa1d3c-9066-4fac-9fd2-b33589c4e2e3"
             },
             "target": {
               "cell": "34996483-e9a2-4f32-832d-ccd19244bb97"
             },
-            "labels": [
-              "Wochenreport"
-            ],
             "vertices": [
               {
                 "x": 280,
@@ -1595,15 +1595,15 @@
               "threats": []
             },
             "id": "e023159d-21c1-4dd4-a1e0-cc1b32497fe8",
+            "labels": [
+              "Monatlicher Managementreport"
+            ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
               "cell": "9304254f-0f73-4c74-97dc-d5d768213f61"
             },
-            "labels": [
-              "Monatlicher Managementreport"
-            ],
             "vertices": [
               {
                 "x": 530,
@@ -1632,6 +1632,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 11,
             "id": "83e39c42-15b8-4fda-aa37-71e5f148d1b6",
             "data": {
               "type": "tm.Process",
@@ -1642,8 +1643,7 @@
               "privilegeLevel": "",
               "hasOpenThreats": false,
               "threats": []
-            },
-            "zIndex": 11
+            }
           },
           {
             "position": {
@@ -1666,6 +1666,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 12,
             "id": "b8dd0899-826e-4ab9-a8e1-8122a236ef54",
             "data": {
               "type": "tm.Process",
@@ -1676,8 +1677,7 @@
               "privilegeLevel": "",
               "hasOpenThreats": false,
               "threats": []
-            },
-            "zIndex": 12
+            }
           },
           {
             "position": {
@@ -1700,8 +1700,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "8efa1d3c-9066-4fac-9fd2-b33589c4e2e3",
             "zIndex": 13,
+            "id": "8efa1d3c-9066-4fac-9fd2-b33589c4e2e3",
             "data": {
               "type": "tm.Process",
               "name": "SIEM",
@@ -1734,8 +1734,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "34996483-e9a2-4f32-832d-ccd19244bb97",
             "zIndex": 14,
+            "id": "34996483-e9a2-4f32-832d-ccd19244bb97",
             "data": {
               "type": "tm.Actor",
               "name": "Management",
@@ -1768,8 +1768,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "3cd5aecc-0603-470a-9e7d-e02775f1e53d",
             "zIndex": 15,
+            "id": "3cd5aecc-0603-470a-9e7d-e02775f1e53d",
             "data": {
               "type": "tm.Process",
               "name": "Mobile Phone \nOTT Service",
@@ -1802,8 +1802,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "9304254f-0f73-4c74-97dc-d5d768213f61",
             "zIndex": 16,
+            "id": "9304254f-0f73-4c74-97dc-d5d768213f61",
             "data": {
               "type": "tm.Process",
               "name": "Ausgabe von \nExport-Prozess",
