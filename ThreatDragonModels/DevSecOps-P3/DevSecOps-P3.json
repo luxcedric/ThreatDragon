@@ -1630,78 +1630,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Login",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "f9ef81f5-b897-4279-95eb-2bf0a7573c62",
-                  "title": "DoS Angriff auf das System",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "Der Angreifer erstellt eine hohe Last an Anfragen für die Login-Seite. Diese ist der Last nicht gewachsen und das System bricht zusammen. Hierbei kann der Angreifer ein Botnetz verwenden um die Anfragen auf den Server verteilt zu erstellen\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "Generic",
-                  "new": false,
-                  "number": 10,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "75df1a91-2d79-480a-ae52-b56775f5de02",
-            "labels": [
-              "Login"
-            ],
-            "source": {
-              "x": 44,
-              "y": 160
-            },
-            "target": {
-              "cell": "516403bb-35a1-4173-8492-18fa95610750"
-            },
-            "vertices": [
-              {
-                "x": 90,
-                "y": 220
-              },
-              {
-                "x": 190,
-                "y": 260
-              },
-              {
-                "x": 230,
-                "y": 260
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "1. Auth Challenge",
               "description": "",
               "outOfScope": false,
@@ -1741,6 +1669,78 @@
               {
                 "x": 510,
                 "y": 196.5
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "f9ef81f5-b897-4279-95eb-2bf0a7573c62",
+                  "title": "DoS Angriff auf das System",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Der Angreifer erstellt eine hohe Last an Anfragen für die Login-Seite. Diese ist der Last nicht gewachsen und das System bricht zusammen. Hierbei kann der Angreifer ein Botnetz verwenden um die Anfragen auf den Server verteilt zu erstellen\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n\nDamage: 9 -> hoch\nReproducibility: 7 tendentiell hoch\nExploitability: 7 tendentiell hoch\nAffected User: 8 hoch\nDiscoverability: 4 relativ mittel\nDread Wert -> 7\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "75df1a91-2d79-480a-ae52-b56775f5de02",
+            "labels": [
+              "Login"
+            ],
+            "source": {
+              "x": 44,
+              "y": 160
+            },
+            "target": {
+              "cell": "516403bb-35a1-4173-8492-18fa95610750"
+            },
+            "vertices": [
+              {
+                "x": 90,
+                "y": 220
+              },
+              {
+                "x": 190,
+                "y": 260
+              },
+              {
+                "x": 230,
+                "y": 260
               }
             ]
           },
