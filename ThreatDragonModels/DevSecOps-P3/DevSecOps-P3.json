@@ -1710,7 +1710,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Der Angreifer erstellt eine hohe Last an Anfragen für die Login-Seite. Diese ist der Last nicht gewachsen und das System bricht zusammen. Hierbei kann der Angreifer ein Botnetz verwenden um die Anfragen auf den Server verteilt zu erstellen\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n\nDamage: 9 -> hoch\nReproducibility: 7 tendentiell hoch\nExploitability: 7 tendentiell hoch\nAffected User: 8 hoch\nDiscoverability: 4 relativ mittel\nDread Wert -> 7\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "M1037\nFilter Network Traffic\n-> Legitimer Traffic muss von böswilligem Getrennt werden, hierzu kann der ISP zu rate gezogen werden, Ports geschlossen werden oder IP Adressen blockiert werden.\n\nDies würd die Exploitability was reduzieren, den rest nicht schwer:\n Exp: 5\nDread: 6,8",
                   "modelType": "Generic",
                   "new": false,
                   "number": 10,
