@@ -189,7 +189,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Der Benutzer versucht sich auf einer Visuell ähnlich/gleichen Plattform anzumelden, ohne zu merken dass im Hintergrund seine Login-Credentials mitgeschnitten werden\n\nCAPEC: Fake source of Data: ID194 \nMIRTE: T1567 -> Restrict Web Based Content ",
+                  "description": "Der Benutzer versucht sich auf einer Visuell ähnlich/gleichen Plattform anzumelden, ohne zu merken dass im Hintergrund seine Login-Credentials mitgeschnitten werden\n\nCAPEC: Fake source of Data: ID194 \nMIRTE: T1567 -> Restrict Web Based Content \n\nDamage: 8 hoch\nReproducibility: 7 ziemlich hoch\nExploitability: 7 ziemlich hoch\nAffected Users: 6 mittel\nDiscoverability: 8 hoch\nDread -> 7,2\n\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -237,7 +237,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Der Angreifer könnte Daten wie die Telefonnummer bearbeiten, wodurch der Angreifer den Token erhalten würde, statt der Zielperson\n\nCAPEC: ID 165\nMITRE: Encrypt Sensitive Data  -> ID T1565",
+                  "description": "Der Angreifer könnte Daten wie die Telefonnummer bearbeiten, wodurch der Angreifer den Token erhalten würde, statt der Zielperson\n\nCAPEC: ID 165\nMITRE: Encrypt Sensitive Data  -> ID T1565\n\nDamage: 8 hoch\nReproducibility: 6 mittel\nExploitability: 6 mittel\nAffected Users: 6 mittel\nDiscoverability: 3 niedriger\nDread -> 5,8\n\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1630,69 +1630,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "1. Auth Challenge",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "a4283f91-75bb-4335-ad37-821049820800",
-                  "title": "MitM zwischen Login und 2FA System",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden\n\nCAPEC ID: 94\nMITRE: Encrypt Sensitive Information -> ID T1557\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "Generic",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "97750274-66e2-49d0-865c-886e8dc1a431",
-            "labels": [
-              "1. Auth Challenge"
-            ],
-            "source": {
-              "cell": "516403bb-35a1-4173-8492-18fa95610750"
-            },
-            "target": {
-              "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "vertices": [
-              {
-                "x": 510,
-                "y": 196.5
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Login",
               "description": "",
               "outOfScope": false,
@@ -1741,6 +1678,69 @@
               {
                 "x": 230,
                 "y": 260
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "1. Auth Challenge",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a4283f91-75bb-4335-ad37-821049820800",
+                  "title": "MitM zwischen Login und 2FA System",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden\n\nCAPEC ID: 94\nMITRE: Encrypt Sensitive Information -> ID T1557\n\nDamage: 8 hoch\nReproducibility: 6 mittel\nExploitability: 7 tendiert hoch\nAffected Users: 8 hoch\nDiscoverability: 4 niedrig\n\ndread -> 6,6",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "97750274-66e2-49d0-865c-886e8dc1a431",
+            "labels": [
+              "1. Auth Challenge"
+            ],
+            "source": {
+              "cell": "516403bb-35a1-4173-8492-18fa95610750"
+            },
+            "target": {
+              "cell": "58d69334-736f-4331-822b-553769b8fedc"
+            },
+            "vertices": [
+              {
+                "x": 510,
+                "y": 196.5
               }
             ]
           },
