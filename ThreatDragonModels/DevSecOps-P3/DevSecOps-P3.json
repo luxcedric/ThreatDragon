@@ -293,7 +293,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Falls ein Angreifer im System ist, kann er die Daten der Datenbank offenlegen, da diese nicht verschlüsselt ist\n\nCAPAC ID37\nMITRE: ID: M1041 Encrypt Sensitive Data",
+                  "description": "Falls ein Angreifer im System ist, kann er die Daten der Datenbank offenlegen, da diese nicht verschlüsselt ist\n\nCAPAC ID37\nMITRE: ID: M1041 Encrypt Sensitive Data\n\nDamage: 8\nRepro: 6\nExploi: 6\nAffec: 8\nDisco.: 8\n\nDread -> 7.2",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1443,7 +1443,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Monatlicher Managementreport",
+              "name": "1. Auth Challenge",
               "description": "",
               "outOfScope": false,
               "isBidirectional": false,
@@ -1454,40 +1454,93 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "a3f8a0b1-d62c-4d91-a5f8-e638504ce08e",
-                  "title": "Manipulation der Berichte",
+                  "id": "a4283f91-75bb-4335-ad37-821049820800",
+                  "title": "MitM zwischen Login und 2FA System",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Durch die Manipulation der Berichte könnte man den Managern vorgaukelt, dass das System einwandfrei funktioniert, auch wenn das System eigentlich andere Meldungen in den Bericht schreiben wollte.\n\nCAPEC: ID: 165\nMITRE: Encrypt Sensitive Data -> ID T1565",
+                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden\n\nCAPEC ID: 94\nMITRE: Encrypt Sensitive Information -> ID T1557\n\nDamage: 8 hoch\nReproducibility: 6 mittel\nExploitability: 7 tendiert hoch\nAffected Users: 8 hoch\nDiscoverability: 4 niedrig\n\ndread -> 6,6",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
-                  "number": 15,
+                  "number": 11,
                   "score": ""
                 }
               ]
             },
-            "id": "e023159d-21c1-4dd4-a1e0-cc1b32497fe8",
+            "id": "97750274-66e2-49d0-865c-886e8dc1a431",
             "labels": [
-              "Monatlicher Managementreport"
+              "1. Auth Challenge"
+            ],
+            "source": {
+              "cell": "516403bb-35a1-4173-8492-18fa95610750"
+            },
+            "target": {
+              "cell": "58d69334-736f-4331-822b-553769b8fedc"
+            },
+            "vertices": [
+              {
+                "x": 510,
+                "y": 196.5
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log(Login, Phone Number)",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "8b258f90-f7a2-437c-bfde-e3d8fd9f94f4",
+                  "title": "Löschen der Logeinträge",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Wenn der Angreifer die Logeinträge vor der DB abfangen kann und diese löschen kann, so kann er seine Aktivität leugnen, da es keinen Beweis gegen ihn gibt.\n\nCAPEC: ID: 81\nMITRE: \nEncrypt Sensitive Data: ID1070\n\nDamage: 8\nReproducitibilty: 6\nExploitability: 5\nAffected Users: 6\nDiscoverability: 3\nDread -> 5,6",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "Generic",
+                  "new": false,
+                  "number": 12,
+                  "score": "5,6"
+                }
+              ]
+            },
+            "id": "0a33524d-0fd7-4ec1-ad3e-089985ca5c5b",
+            "labels": [
+              "Log(Login, Phone Number)"
             ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
-              "cell": "9304254f-0f73-4c74-97dc-d5d768213f61"
-            },
-            "vertices": [
-              {
-                "x": 680,
-                "y": 100
-              },
-              {
-                "x": 530,
-                "y": 10
-              }
-            ]
+              "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
+            }
           },
           {
             "shape": "flow",
@@ -1526,7 +1579,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Der Angreifer könnte sich als ein Benutzer ausgeben der einen Token braucht. Dieser wird dann für ihn erstellt.\n\nCAPEC: ID 194: Fake the source of Data\nMITRE: Application Developer Guidance: T1212",
+                  "description": "Der Angreifer könnte sich als ein Benutzer ausgeben der einen Token braucht. Dieser wird dann für ihn erstellt.\n\nCAPEC: ID 194: Fake the source of Data\nMITRE: Application Developer Guidance: T1212\n\nDamage: 8 hoch\nReproducibility: 7 ziemlich hoch\nExploitability: 7 ziemlich hoch\nAffected Users: 3 niedrig\nDiscoverability: 8 hoch\nDread -> 6,6\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1573,7 +1626,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Log(Login, Phone Number)",
+              "name": "Monatlicher Managementreport",
               "description": "",
               "outOfScope": false,
               "isBidirectional": false,
@@ -1584,30 +1637,40 @@
               "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "8b258f90-f7a2-437c-bfde-e3d8fd9f94f4",
-                  "title": "Löschen der Logeinträge",
+                  "id": "a3f8a0b1-d62c-4d91-a5f8-e638504ce08e",
+                  "title": "Manipulation der Berichte",
                   "status": "Open",
                   "severity": "Medium",
-                  "type": "Repudiation",
-                  "description": "Wenn der Angreifer die Logeinträge vor der DB abfangen kann und diese löschen kann, so kann er seine Aktivität leugnen, da es keinen Beweis gegen ihn gibt.\n\nCAPEC: ID: 81\nMITRE: \nEncrypt Sensitive Data: ID1070",
+                  "type": "Tampering",
+                  "description": "Durch die Manipulation der Berichte könnte man den Managern vorgaukelt, dass das System einwandfrei funktioniert, auch wenn das System eigentlich andere Meldungen in den Bericht schreiben wollte.\n\nCAPEC: ID: 165\nMITRE: Encrypt Sensitive Data -> ID T1565\n\nDamage: 8 hoch\nReproducibility: 6 mittel\nExploitability: 6 mittel\nAffected Users: 6 mittel\nDiscoverability: 3 niedriger\nDread -> 5,8\n\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
-                  "number": 12,
+                  "number": 15,
                   "score": ""
                 }
               ]
             },
-            "id": "0a33524d-0fd7-4ec1-ad3e-089985ca5c5b",
+            "id": "e023159d-21c1-4dd4-a1e0-cc1b32497fe8",
             "labels": [
-              "Log(Login, Phone Number)"
+              "Monatlicher Managementreport"
             ],
             "source": {
               "cell": "58d69334-736f-4331-822b-553769b8fedc"
             },
             "target": {
-              "cell": "eee6efac-868f-409f-afeb-a2619dbe1d12"
-            }
+              "cell": "9304254f-0f73-4c74-97dc-d5d768213f61"
+            },
+            "vertices": [
+              {
+                "x": 680,
+                "y": 100
+              },
+              {
+                "x": 530,
+                "y": 10
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1678,69 +1741,6 @@
               {
                 "x": 230,
                 "y": 260
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "1. Auth Challenge",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "a4283f91-75bb-4335-ad37-821049820800",
-                  "title": "MitM zwischen Login und 2FA System",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Zwischen dem Login-System und dem 2FA Dienst kann sich ein Angreifer zwischenschalten und die Daten abfangen, überwachen und sogar manipulieren. Dies passiert wenn die Daten unverschlüsselt übermittelt werden\n\nCAPEC ID: 94\nMITRE: Encrypt Sensitive Information -> ID T1557\n\nDamage: 8 hoch\nReproducibility: 6 mittel\nExploitability: 7 tendiert hoch\nAffected Users: 8 hoch\nDiscoverability: 4 niedrig\n\ndread -> 6,6",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "Generic",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "97750274-66e2-49d0-865c-886e8dc1a431",
-            "labels": [
-              "1. Auth Challenge"
-            ],
-            "source": {
-              "cell": "516403bb-35a1-4173-8492-18fa95610750"
-            },
-            "target": {
-              "cell": "58d69334-736f-4331-822b-553769b8fedc"
-            },
-            "vertices": [
-              {
-                "x": 510,
-                "y": 196.5
               }
             ]
           },
@@ -1850,7 +1850,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Wenn die Daten im Siem nicht verschlüsselt sind, und ein Angreifer auf dieses Zugriff erhalten könnte, so könnten die Daten offengelegt werde. Hier könnten Sicherheitsrelevante Informationen oder Protokolldaten betroffen sein\n\n\nCAPEC ID: 165\nMITRE: Encrypt Sensitive Information -> ID T1557\n",
+                  "description": "Wenn die Daten im Siem nicht verschlüsselt sind, und ein Angreifer auf dieses Zugriff erhalten könnte, so könnten die Daten offengelegt werde. Hier könnten Sicherheitsrelevante Informationen oder Protokolldaten betroffen sein\n\n\nCAPEC ID: 165\nMITRE: Encrypt Sensitive Information -> ID T1557\n\nDamage: 8\nRepro: 6\nExploi: 6\nAffec: 4\nDisco.: 7\n\nDread -> 6,2",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1932,7 +1932,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Wenn das System vllt auch durch handeln eines Angreifers zu viele Anfragen an den OTT-Service schickt kann dieser Überlasten und der Kunde könnte sein OTT nicht mehr erhalten\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n",
+                  "description": "Wenn das System vllt auch durch handeln eines Angreifers zu viele Anfragen an den OTT-Service schickt kann dieser Überlasten und der Kunde könnte sein OTT nicht mehr erhalten\n\nCAPEC: HTTP DoS: 469\nMITRE: T1498 \n\nDamage: 9 -> hoch\nReproducibility: 7 tendentiell hoch\nExploitability: 7 tendentiell hoch\nAffected User: 8 hoch\nDiscoverability: 4 relativ mittel\nDread Wert -> 7\n\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "Generic",
                   "new": false,
@@ -1995,6 +1995,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 18
+    "threatTop": 19
   }
 }
